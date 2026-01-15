@@ -76,6 +76,19 @@ body {
     color: black;
 }
 
+.nav-box {
+    width: 100%;
+    height: 400px;
+    display: inline-grid;
+    gap: 10px;
+}
+
+.nav-box button {
+    margin: auto;
+    width: 200px;
+    height: 100px;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
     .desktop-nav {

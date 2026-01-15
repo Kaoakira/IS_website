@@ -12,11 +12,13 @@
     <title>ผลงาน</title>
 
     <script>
-        const toggle = document.getElementById("menuToggle");
-        const mobileNav = document.getElementById("mobileNav");
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("menuToggle");
+            const mobileNav = document.getElementById("mobileNav");
 
-        toggle.addEventListener("click", () => {
-            mobileNav.classList.toggle("show");
+            toggle.addEventListener("click", () => {
+                mobileNav.classList.toggle("show");
+            });
         });
 
         function moveView(element) {
@@ -28,6 +30,7 @@
             });
         }
     </script>
+
 </head>
 
 <body>
@@ -48,7 +51,6 @@
             </span>
         </nav>
 
-        <!-- FLOATING OVERLAY MENU -->
         <div class="mobile-nav" id="mobileNav">
             <a href="https://sites.google.com/student.nssc.ac.th/akirasat/home" target="_self">หน้าแรก</a>
             <a href="https://kaoakira.github.io/IS_website/personal-infomation/index.html"
@@ -59,13 +61,27 @@
         <h1>ผลงาน</h1>
     </header>
 
-    <div>
-        <button onclick="moveView(project-box)">เล่มโครงงาน</button>
+    <div class="nav-box">
+        <button onclick="moveView('#project-box')">เล่มโครงงาน</button>
+        <button onclick="moveView('#poster-box')">โปสเตอร์</button>
+        <button onclick="moveView('#infographic-box')">Infographic</button>
+        <button onclick="moveView('#presentation-box')">Presentation</button>
     </div>
 
     <div id="project-box">
-        <h1>เล่มโครงงาน</h1>
+        <h1>แผ่นพับ</h1>
     </div>
+
+    <div id="poster-box">
+        <h1>โปสเตอร์</h1>
+    </div>
+
+    <div id="infographic-box">
+        <h1>Infographic</h1>
+    </div>
+
+    <div id="presentation-box">
+        <h1>Presentation</h1>
 
 </body>
 
