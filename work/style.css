@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
+    color: black;
 }
 
 header {
@@ -27,21 +28,26 @@ nav span {
     gap: 10px;
 }
 
-#menuToggle {
-    width: 22px;
-    filter: invert(1);
+.desktop-nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
     cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.desktop-nav a:hover {
+    opacity: 0.7;
 }
 
 .icon {
     width: 22px;
 }
 
-.desktop-nav a {
-    margin: 0 15px;
+#menuToggle {
+    width: 22px;
+    filter: invert(1);
     cursor: pointer;
-    color: white;
-    text-decoration-line: none;
 }
 
 h1 {
@@ -55,39 +61,71 @@ h1 {
     top: 50px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(6px);
     display: none;
     flex-direction: column;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
     z-index: 1000;
 }
 
 .mobile-nav a {
     padding: 15px 20px;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .mobile-nav.show {
     display: flex;
 }
 
-body {
-    color: black;
-}
-
 .nav-box {
     width: 100%;
-    height: 400px;
-    display: inline-grid;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .nav-box button {
-    margin: auto;
-    width: 200px;
-    height: 100px;
+    position: relative;
+    overflow: hidden;
+
+    background: white;
+    color: black;
+    font-size: larger;
+    margin: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+
+    transition: color 0.3s ease;
 }
+
+.nav-box button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: gray;
+    z-index: 0;
+    transition: left 0.35s ease;
+}
+
+.nav-box button:hover::before {
+    left: 0;
+}
+
+.nav-box button span {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-box button:hover {
+    color: white;
+}
+
 
 /* MOBILE */
 @media (max-width: 600px) {
@@ -97,6 +135,11 @@ body {
 
     .icon {
         display: none;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-top: 50px;
     }
 }
 
