@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงาน | Akira</title>
+
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <title>ผลงาน</title>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -21,94 +19,79 @@
             });
         });
 
-        function moveView(element) {
-            let target = document.querySelector(element);
-
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        function moveView(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
         }
     </script>
-
 </head>
 
 <body>
+
     <header>
         <nav>
-            <span>
+            <div class="nav-left">
                 <img id="menuToggle"
                     src="https://images.icon-icons.com/510/PNG/512/navicon-round_icon-icons.com_50087.png">
-                <img class="icon" src="./icon.png">
                 <strong>Akira</strong>
-            </span>
+            </div>
 
-            <span class="desktop-nav">
-                <a href="https://sites.google.com/student.nssc.ac.th/akirasat/home" target="_self">หน้าแรก</a>
-                <a href="https://kaoakira.github.io/IS_website/personal-infomation/index.html"
-                    target="_self">ประวัติส่วนตัว</a>
-                <a href="https://kaoakira.github.io/IS_website/work/index.html" target="_self">ผลงาน</a>
-            </span>
+            <div class="desktop-nav">
+                <a href="#">หน้าแรก</a>
+                <a href="#">ประวัติส่วนตัว</a>
+                <a href="#">ผลงาน</a>
+            </div>
         </nav>
 
         <div class="mobile-nav" id="mobileNav">
-            <a href="https://sites.google.com/student.nssc.ac.th/akirasat/home" target="_self">หน้าแรก</a>
-            <a href="https://kaoakira.github.io/IS_website/personal-infomation/index.html"
-                target="_self">ประวัติส่วนตัว</a>
-            <a href="https://kaoakira.github.io/IS_website/work/index.html" target="_self">ผลงาน</a>
+            <a href="#">หน้าแรก</a>
+            <a href="#">ประวัติส่วนตัว</a>
+            <a href="#">ผลงาน</a>
         </div>
 
-        <h1>ผลงาน</h1>
+        <div class="hero">
+            <h1>ผลงาน</h1>
+        </div>
     </header>
 
-    <div class="nav-box">
-        <button onclick="moveView('#project-box')"><span>เล่มโครงงาน</span></button>
-        <button onclick="moveView('#paper-box')"><span>แผ่นพับ</span></button>
-        <button onclick="moveView('#poster-box')"><span>โปสเตอร์</span></button>
-        <button onclick="moveView('#infographic-box')"><span>Infographic</span></button>
-        <button onclick="moveView('#presentation-box')"><span>Presentation</span></button>
-    </div>
+    <section class="nav-box">
+        <button onclick="moveView('#project')"><span>เล่มโครงงาน</span></button>
+        <button onclick="moveView('#paper')"><span>แผ่นพับ</span></button>
+        <button onclick="moveView('#poster')"><span>โปสเตอร์</span></button>
+        <button onclick="moveView('#infographic')"><span>Infographic</span></button>
+        <button onclick="moveView('#presentation')"><span>Presentation</span></button>
+    </section>
 
-    <div id="project-box">
-        <h1>เล่มโครงงาน</h1>
-        <iframe src="./project.pdf" width="80%" height="500px" style="border: none; margin-inline: 10%;">
-            <p>Your browser does not support iframes. You can <a href="./project.pdf">download the PDF</a> instead.
-            </p>
-        </iframe>
+    <main>
 
-    </div>
+        <section class="work-card" id="project">
+            <h2>เล่มโครงงาน</h2>
+            <iframe src="./project.pdf"></iframe>
+        </section>
 
-    <div id="paper-box">
-        <h1>แผ่นพับ</h1>
-        <iframe src="./paper.pdf" width="80%" height="500px" style="border: none; margin-inline: 10%;">
-            <p>Your browser does not support iframes. You can <a href="./paper.pdf">download the PDF</a> instead.
-            </p>
-        </iframe>
-    </div>
+        <section class="work-card" id="paper">
+            <h2>แผ่นพับ</h2>
+            <iframe src="./paper.pdf"></iframe>
+        </section>
 
-    <div id="poster-box">
-        <h1>โปสเตอร์</h1>
-        <iframe src="./poster.pdf" width="80%" height="500px" style="border: none; margin-inline: 10%;">
-            <p>Your browser does not support iframes. You can <a href="./poster.pdf">download the PDF</a> instead.
-            </p>
-        </iframe>
-    </div>
+        <section class="work-card" id="poster">
+            <h2>โปสเตอร์</h2>
+            <iframe src="./poster.pdf"></iframe>
+        </section>
 
-    <div id="infographic-box">
-        <h1>Infographic</h1>
-        <iframe src="./infographic.pdf" width="80%" height="500px" style="border: none; margin-inline: 10%;">
-            <p>Your browser does not support iframes. You can <a href="./infographic.pdf">download the PDF</a> instead.
-            </p>
-        </iframe>
-    </div>
+        <section class="work-card" id="infographic">
+            <h2>Infographic</h2>
+            <iframe src="./infographic.pdf"></iframe>
+        </section>
 
-    <div id="presentation-box">
-        <h1>Presentation</h1>
-        <iframe src="./presentation.pdf" width="80%" height="500px" style="border: none; margin-inline: 10%;">
-            <p>Your browser does not support iframes. You can <a href="./presentation.pdf">download the PDF</a> instead.
-            </p>
-        </iframe>
-    </div>
+        <section class="work-card" id="presentation">
+            <h2>Presentation</h2>
+            <iframe src="./presentation.pdf"></iframe>
+        </section>
+
+    </main>
 
 </body>
 

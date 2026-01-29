@@ -1,15 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <title>Akira | Personal Information</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    <title>ประวัติส่วนตัว</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-left">
+                <img id="menuToggle"
+                    src="https://images.icon-icons.com/510/PNG/512/navicon-round_icon-icons.com_50087.png">
+                <strong>Akira</strong>
+            </div>
+
+            <div class="desktop-nav">
+                <a href="#">หน้าแรก</a>
+                <a href="#">ประวัติส่วนตัว</a>
+                <a href="#">ผลงาน</a>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#">หน้าแรก</a>
+            <a href="#">ประวัติส่วนตัว</a>
+            <a href="#">ผลงาน</a>
+        </div>
+
+        <div class="hero">
+            <h1>Personal Information</h1>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="info-card">
+            <div class="profile-img"></div>
+            <div class="info-text">
+                <h2>ข้อมูลทั่วไป</h2>
+                <ul>
+                    <li><span>ชื่อ</span> อคิราภ์ สัตระ (เก้า)</li>
+                    <li><span>เกิด</span> 30 กรกฎาคม 2010</li>
+                    <li><span>อายุ</span> 15 ปี</li>
+                    <li><span>งานอดิเรก</span> งานประดิษฐ์</li>
+                    <li><span>ความสนใจ</span> Anime, Programming</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact-box">
+            <div class="contact-title">Contact</div>
+
+            <div class="contact-grid">
+                <a href="mailto:51703.akira@student.nssc.ac.th">
+                    <img src="./email.png">
+                    <span>Email</span>
+                </a>
+
+                <a href="https://youtube.com" class="youtube">
+                    <img src="./youtube.png">
+                    <span>YouTube</span>
+                </a>
+
+                <a href="https://instagram.com" class="instagram">
+                    <img src="./instagram.png">
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://facebook.com" class="facebook">
+                    <img src="./facebook.png">
+                    <span>Facebook</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
 
     <script>
         const toggle = document.getElementById("menuToggle");
@@ -19,36 +95,6 @@
             mobileNav.classList.toggle("show");
         });
     </script>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <span>
-                <img id="menuToggle"
-                    src="https://images.icon-icons.com/510/PNG/512/navicon-round_icon-icons.com_50087.png">
-                <img class="icon" src="./icon.png">
-                <strong>Akira</strong>
-            </span>
-
-            <span class="desktop-nav">
-                <a href="https://sites.google.com/student.nssc.ac.th/akirasat/home" target="_self">หน้าแรก</a>
-                <a href="https://kaoakira.github.io/IS_website/personal-infomation/index.html"
-                    target="_self">ประวัติส่วนตัว</a>
-                <a href="https://kaoakira.github.io/IS_website/work/index.html" target="_self">ผลงาน</a>
-            </span>
-        </nav>
-
-        <!-- FLOATING OVERLAY MENU -->
-        <div class="mobile-nav" id="mobileNav">
-            <a href="https://sites.google.com/student.nssc.ac.th/akirasat/home" target="_self">หน้าแรก</a>
-            <a href="https://kaoakira.github.io/IS_website/personal-infomation/index.html"
-                target="_self">ประวัติส่วนตัว</a>
-            <a href="https://kaoakira.github.io/IS_website/work/index.html" target="_self">ผลงาน</a>
-        </div>
-
-        <h1>Information</h1>
-    </header>
 
 </body>
 

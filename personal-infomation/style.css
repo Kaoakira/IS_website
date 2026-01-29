@@ -1,30 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato", "Noto Sans Thai", sans-serif;
+    background: #f4f6fb;
+    color: #222;
 }
 
 header {
     position: relative;
-    min-height: 400px;
+    height: 380px;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.55)),
+        url(./banner.png) center right/cover no-repeat;
     color: white;
-    background-image: url(https://images8.alphacoders.com/113/thumb-1920-1137852.png);
-    background-position: center;
-    background-size: cover;
 }
 
 nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 50px;
-    padding: 0 20px;
-    backdrop-filter: blur(5px);
+    align-items: center;
+    padding: 14px 24px;
+    backdrop-filter: blur(8px);
 }
 
-nav span {
+.nav-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 #menuToggle {
@@ -33,58 +39,166 @@ nav span {
     cursor: pointer;
 }
 
-.icon {
-    width: 22px;
-}
-
 .desktop-nav a {
-    margin: 0 15px;
-    cursor: pointer;
+    margin-left: 20px;
     color: white;
-    text-decoration-line: none;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
 }
 
-h1 {
-    font-size: 60px;
-    margin-top: 80px;
+.desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
     text-align: center;
+    margin-top: 80px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin: 0;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.85;
 }
 
 .mobile-nav {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(6px);
     display: none;
     flex-direction: column;
-    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .mobile-nav a {
-    padding: 15px 20px;
-    text-decoration: none;
+    padding: 16px;
     color: white;
+    text-decoration: none;
 }
 
 .mobile-nav.show {
     display: flex;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.info-card {
+    display: flex;
+    gap: 24px;
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.profile-img {
+    width: 180px;
+    border-radius: 16px;
+    background: url(./IMG_2454.png) center/cover no-repeat;
+}
+
+.info-text h2 {
+    margin-top: 0;
+}
+
+.info-text ul {
+    padding: 0;
+    list-style: none;
+}
+
+.info-text li {
+    margin-bottom: 10px;
+}
+
+.info-text span {
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.contact-box {
+    margin-top: 50px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-title {
+    padding: 24px;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ececec, #f7f7f7);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 24px;
+}
+
+.contact-grid a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #ddd;
+    transition: 0.25s;
+}
+
+.contact-grid a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-grid img {
+    width: 36px;
+}
+
+@media (max-width: 768px) {
     .desktop-nav {
         display: none;
     }
 
-    .icon {
-        display: none;
+    .info-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* DESKTOP */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
     #menuToggle {
         display: none;
     }
